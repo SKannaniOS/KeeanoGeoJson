@@ -12,6 +12,7 @@
 		8B8FED25216DCC8300216C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED23216DCC8300216C5A /* Main.storyboard */; };
 		8B8FED27216DCC8400216C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED26216DCC8400216C5A /* Assets.xcassets */; };
 		8B8FED2A216DCC8400216C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED28216DCC8400216C5A /* LaunchScreen.storyboard */; };
+		8B8FED35216DD74400216C5A /* data.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED34216DD74400216C5A /* data.geojson */; };
 		9475B522580887456786B0B4 /* libPods-KeeanoGeoJson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785BFC9C05D8E738A49015F0 /* libPods-KeeanoGeoJson.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		8B8FED29216DCC8400216C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B8FED2B216DCC8400216C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B8FED33216DD53D00216C5A /* KeeanoGeoJson-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeeanoGeoJson-Bridging-Header.h"; sourceTree = "<group>"; };
+		8B8FED34216DD74400216C5A /* data.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.geojson; sourceTree = "<group>"; };
 		B75A216A973840BB6FB41057 /* Pods-KeeanoGeoJson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeeanoGeoJson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeeanoGeoJson/Pods-KeeanoGeoJson.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 		8B8FED1E216DCC8300216C5A /* KeeanoGeoJson */ = {
 			isa = PBXGroup;
 			children = (
+				8B8FED34216DD74400216C5A /* data.geojson */,
 				8B8FED1F216DCC8300216C5A /* AppDelegate.swift */,
 				8B8FED21216DCC8300216C5A /* ViewController.swift */,
 				8B8FED23216DCC8300216C5A /* Main.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B8FED2A216DCC8400216C5A /* LaunchScreen.storyboard in Resources */,
+				8B8FED35216DD74400216C5A /* data.geojson in Resources */,
 				8B8FED27216DCC8400216C5A /* Assets.xcassets in Resources */,
 				8B8FED25216DCC8300216C5A /* Main.storyboard in Resources */,
 			);

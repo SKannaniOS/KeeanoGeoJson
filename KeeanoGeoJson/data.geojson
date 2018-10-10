@@ -1,0 +1,585 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 1",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.6427526473999,
+          38.25051606450655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 2",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.644211769104004,
+          38.250954187978536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 3",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.64631462097168,
+          38.251459711779674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "name": "Anchorage spot 1",
+        "type": "anchorage_spot",
+        "stroke-width": 1,
+        "stroke-opacity": 1,
+        "fill": "#FF93F5",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.6457781791687,
+              38.2543748304265
+            ],
+            [
+              20.643653869628903,
+              38.25358287334574
+            ],
+            [
+              20.644168853759766,
+              38.25306051395174
+            ],
+            [
+              20.645198822021484,
+              38.25300996284339
+            ],
+            [
+              20.646421909332275,
+              38.25348177182058
+            ],
+            [
+              20.6457781791687,
+              38.2543748304265
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Port",
+        "type": "port",
+        "marker-color": "#000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.64502716064453,
+          38.25226854254749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 9",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.653738975524902,
+          38.25631256135659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@name": "Beach 10",
+        "@type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.65541267395019,
+          38.258738864615914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 11",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.658116340637207,
+          38.26116508685363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 12",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.631637573242188,
+          38.25307736431337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 13",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.63532829284668,
+          38.25162821893197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "name": "Anchorage spot 4",
+        "type": "anchorage_spot",
+        "stroke-width": 1,
+        "stroke-opacity": 1,
+        "fill": "#FF93F5",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.630779266357422,
+              38.258873656865816
+            ],
+            [
+              20.633697509765625,
+              38.25584077075865
+            ],
+            [
+              20.635499954223633,
+              38.25584077075865
+            ],
+            [
+              20.637474060058594,
+              38.25833448636583
+            ],
+            [
+              20.636959075927734,
+              38.26136726838286
+            ],
+            [
+              20.63180923461914,
+              38.26163684287986
+            ],
+            [
+              20.630779266357422,
+              38.258873656865816
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "name": "Anchorage spot 3",
+        "type": "anchorage_spot",
+        "stroke-width": 1,
+        "stroke-opacity": 1,
+        "fill": "#FF93F5",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.640907287597656,
+              38.261771629753255
+            ],
+            [
+              20.641164779663086,
+              38.25671695085957
+            ],
+            [
+              20.646400451660156,
+              38.25664955276536
+            ],
+            [
+              20.648889541625977,
+              38.25948021889579
+            ],
+            [
+              20.6502628326416,
+              38.26170423634781
+            ],
+            [
+              20.640907287597656,
+              38.261771629753255
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "name": "Anchorage spot 2",
+        "type": "anchorage_spot",
+        "stroke-width": 1,
+        "stroke-opacity": 1,
+        "fill": "#FF93F5",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.663330554962158,
+              38.26755038173523
+            ],
+            [
+              20.661828517913815,
+              38.267365064462744
+            ],
+            [
+              20.662901401519775,
+              38.266253150898876
+            ],
+            [
+              20.663630962371823,
+              38.26662379064474
+            ],
+            [
+              20.663738250732422,
+              38.26723028796762
+            ],
+            [
+              20.663330554962158,
+              38.26755038173523
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 1",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.66455364227295,
+          38.26728082918261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach 2",
+        "type": "beach",
+        "marker-color": "#4ACECE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.663866996765137,
+          38.26568034029887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 6",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.601425170898438,
+          38.303678213425144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 5",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.596876144409176,
+          38.30152283801216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spot 4",
+        "type": "spot",
+        "marker-color": "#FF5733"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.59764862060547,
+          38.30374556787489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "name": "Anchorage spot 1",
+        "type": "anchorage_spot",
+        "stroke-width": 1,
+        "stroke-opacity": 1,
+        "fill": "#FF93F5",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.598850250244137,
+              38.30268472802694
+            ],
+            [
+              20.59827089309692,
+              38.301118697992756
+            ],
+            [
+              20.598936080932614,
+              38.30086610933734
+            ],
+            [
+              20.600416660308834,
+              38.30064719845791
+            ],
+            [
+              20.60058832168579,
+              38.30132076828389
+            ],
+            [
+              20.600717067718506,
+              38.30256685597508
+            ],
+            [
+              20.598850250244137,
+              38.30268472802694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mooring spot 1",
+        "type": "mooring_spot",
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#FFD433",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.601468086242676,
+              38.302987826709405
+            ],
+            [
+              20.60108184814453,
+              38.30201117086514
+            ],
+            [
+              20.6013822555542,
+              38.3018427805975
+            ],
+            [
+              20.602004528045654,
+              38.303206730525794
+            ],
+            [
+              20.601468086242676,
+              38.302987826709405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Marina 1",
+        "type": "marina",
+        "marker-color": "#2C2C2C"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.597863197326657,
+          38.30251633932278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#FFD433",
+        "fill-opacity": 0.5,
+        "type": "mooring_spot",
+        "name": "Mooring spot 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.642876029014587,
+              38.252470748832884
+            ],
+            [
+              20.64253807067871,
+              38.25238228365224
+            ],
+            [
+              20.641883611679077,
+              38.25191889285143
+            ],
+            [
+              20.642049908638,
+              38.25139652149684
+            ],
+            [
+              20.642178654670712,
+              38.25142179761656
+            ],
+            [
+              20.642114281654358,
+              38.25164506962573
+            ],
+            [
+              20.642763376235962,
+              38.2517630243725
+            ],
+            [
+              20.642720460891724,
+              38.251834639661084
+            ],
+            [
+              20.642607808113098,
+              38.25182621433667
+            ],
+            [
+              20.642607808113098,
+              38.251796725693566
+            ],
+            [
+              20.642119646072388,
+              38.251712472361596
+            ],
+            [
+              20.64203917980194,
+              38.251876766268445
+            ],
+            [
+              20.642130374908447,
+              38.25196101940996
+            ],
+            [
+              20.6421035528183,
+              38.251973657372744
+            ],
+            [
+              20.64257025718689,
+              38.25234015733792
+            ],
+            [
+              20.642897486686707,
+              38.25243283519723
+            ],
+            [
+              20.642876029014587,
+              38.252470748832884
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "bbox": [
+    20.59009552001953,
+    38.24680876017446,
+    20.67249298095703,
+    38.310817437056
+  ]
+}

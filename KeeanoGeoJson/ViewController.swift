@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.loadMapView()
+        self.loadGeoJson()
     }
 
     // MARK: - Initial Map Functions
@@ -28,6 +30,17 @@ class ViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = self.mapView
+    }
+    
+    func loadGeoJson() -> Void {
+        
+        let path = Bundle.main.path(forResource: "data", ofType: "geojson")
+        let url = URL(fileURLWithPath: path!)
+        let geoJsonParser = GMUGeoJSONParser(url: url)
+        geoJsonParser.parse()
+        
+        let renderer = GMUGeometryRenderer(map: self.mapView, geometries: geoJsonParser.features)
+        renderer.render()
     }
 
 }
