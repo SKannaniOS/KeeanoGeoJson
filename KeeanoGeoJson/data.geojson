@@ -122,8 +122,8 @@
     {
       "type": "Feature",
       "properties": {
-        "@name": "Beach 10",
-        "@type": "beach",
+        "name": "Beach 10",
+        "type": "beach",
         "marker-color": "#4ACECE"
       },
       "geometry": {

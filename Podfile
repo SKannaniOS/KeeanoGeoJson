@@ -6,7 +6,6 @@ target 'KeeanoGeoJson' do
 #  use_frameworks!
 
 pod 'GoogleMaps'
-pod 'Google-Maps-iOS-Utils'
 
   # Pods for KeeanoGeoJson
 

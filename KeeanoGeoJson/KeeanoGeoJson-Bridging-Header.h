@@ -9,8 +9,5 @@
 #ifndef KeeanoGeoJson_Bridging_Header_h
 #define KeeanoGeoJson_Bridging_Header_h
 
-#import <Google-Maps-iOS-Utils/GMUGeoJSONParser.h>
-#import <Google-Maps-iOS-Utils/GMUGeometryRenderer.h>
-
 
 #endif /* KeeanoGeoJson_Bridging_Header_h */
