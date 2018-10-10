@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FD537AC92283B4D2262ECF6 /* Pods_KeeanoGeoJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88C5234EB7D41E25C8EFB6 /* Pods_KeeanoGeoJson.framework */; };
 		8B8FED20216DCC8300216C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FED1F216DCC8300216C5A /* AppDelegate.swift */; };
 		8B8FED22216DCC8300216C5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FED21216DCC8300216C5A /* ViewController.swift */; };
 		8B8FED25216DCC8300216C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED23216DCC8300216C5A /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EBE1DD642E492FE2A709D10 /* Pods-KeeanoGeoJson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeeanoGeoJson.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeeanoGeoJson/Pods-KeeanoGeoJson.release.xcconfig"; sourceTree = "<group>"; };
 		8B8FED1C216DCC8300216C5A /* KeeanoGeoJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeeanoGeoJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8FED1F216DCC8300216C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8FED21216DCC8300216C5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		8B8FED26216DCC8400216C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B8FED29216DCC8400216C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B8FED2B216DCC8400216C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE88C5234EB7D41E25C8EFB6 /* Pods_KeeanoGeoJson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeeanoGeoJson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B75A216A973840BB6FB41057 /* Pods-KeeanoGeoJson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeeanoGeoJson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeeanoGeoJson/Pods-KeeanoGeoJson.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD537AC92283B4D2262ECF6 /* Pods_KeeanoGeoJson.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				8B8FED1E216DCC8300216C5A /* KeeanoGeoJson */,
 				8B8FED1D216DCC8300216C5A /* Products */,
+				8DC7BAA987F356408A6E2507 /* Pods */,
+				94107D7ED0BEBB32D19BE202 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = KeeanoGeoJson;
 			sourceTree = "<group>";
 		};
+		8DC7BAA987F356408A6E2507 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B75A216A973840BB6FB41057 /* Pods-KeeanoGeoJson.debug.xcconfig */,
+				4EBE1DD642E492FE2A709D10 /* Pods-KeeanoGeoJson.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94107D7ED0BEBB32D19BE202 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE88C5234EB7D41E25C8EFB6 /* Pods_KeeanoGeoJson.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B8FED2E216DCC8400216C5A /* Build configuration list for PBXNativeTarget "KeeanoGeoJson" */;
 			buildPhases = (
+				02C915C37AE0BF45871B9294 /* [CP] Check Pods Manifest.lock */,
 				8B8FED18216DCC8300216C5A /* Sources */,
 				8B8FED19216DCC8300216C5A /* Frameworks */,
 				8B8FED1A216DCC8300216C5A /* Resources */,
@@ -129,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02C915C37AE0BF45871B9294 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeeanoGeoJson-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B8FED18216DCC8300216C5A /* Sources */ = {
@@ -280,15 +326,13 @@
 		};
 		8B8FED2F216DCC8400216C5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75A216A973840BB6FB41057 /* Pods-KeeanoGeoJson.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GY7MHB882;
 				INFOPLIST_FILE = KeeanoGeoJson/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +342,13 @@
 		};
 		8B8FED30216DCC8400216C5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EBE1DD642E492FE2A709D10 /* Pods-KeeanoGeoJson.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GY7MHB882;
 				INFOPLIST_FILE = KeeanoGeoJson/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
