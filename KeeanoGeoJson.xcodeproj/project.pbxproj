@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B7BD394216E5BF2009BE8B6 /* GMFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BD393216E5BF2009BE8B6 /* GMFeature.swift */; };
 		8B8FED20216DCC8300216C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FED1F216DCC8300216C5A /* AppDelegate.swift */; };
 		8B8FED22216DCC8300216C5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FED21216DCC8300216C5A /* ViewController.swift */; };
 		8B8FED25216DCC8300216C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8FED23216DCC8300216C5A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4EBE1DD642E492FE2A709D10 /* Pods-KeeanoGeoJson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeeanoGeoJson.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeeanoGeoJson/Pods-KeeanoGeoJson.release.xcconfig"; sourceTree = "<group>"; };
 		785BFC9C05D8E738A49015F0 /* libPods-KeeanoGeoJson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KeeanoGeoJson.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7BD393216E5BF2009BE8B6 /* GMFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMFeature.swift; sourceTree = "<group>"; };
 		8B8FED1C216DCC8300216C5A /* KeeanoGeoJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeeanoGeoJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8FED1F216DCC8300216C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8FED21216DCC8300216C5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				8B8FED34216DD74400216C5A /* data.geojson */,
 				8B8FED1F216DCC8300216C5A /* AppDelegate.swift */,
 				8B8FED21216DCC8300216C5A /* ViewController.swift */,
+				8B7BD393216E5BF2009BE8B6 /* GMFeature.swift */,
 				8B8FED9A216E525000216C5A /* Helpers.swift */,
 				8B8FED23216DCC8300216C5A /* Main.storyboard */,
 				8B8FED26216DCC8400216C5A /* Assets.xcassets */,
@@ -211,6 +214,7 @@
 			files = (
 				8B8FED22216DCC8300216C5A /* ViewController.swift in Sources */,
 				8B8FED9B216E525000216C5A /* Helpers.swift in Sources */,
+				8B7BD394216E5BF2009BE8B6 /* GMFeature.swift in Sources */,
 				8B8FED20216DCC8300216C5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
