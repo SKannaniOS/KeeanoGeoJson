@@ -25,6 +25,7 @@
 		8B8FED26216DCC8400216C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B8FED29216DCC8400216C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B8FED2B216DCC8400216C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B8FED33216DD53D00216C5A /* KeeanoGeoJson-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeeanoGeoJson-Bridging-Header.h"; sourceTree = "<group>"; };
 		B75A216A973840BB6FB41057 /* Pods-KeeanoGeoJson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeeanoGeoJson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeeanoGeoJson/Pods-KeeanoGeoJson.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +68,7 @@
 				8B8FED26216DCC8400216C5A /* Assets.xcassets */,
 				8B8FED28216DCC8400216C5A /* LaunchScreen.storyboard */,
 				8B8FED2B216DCC8400216C5A /* Info.plist */,
+				8B8FED33216DD53D00216C5A /* KeeanoGeoJson-Bridging-Header.h */,
 			);
 			path = KeeanoGeoJson;
 			sourceTree = "<group>";
@@ -352,9 +354,13 @@
 				DEVELOPMENT_TEAM = 9GY7MHB882;
 				INFOPLIST_FILE = KeeanoGeoJson/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeeanoGeoJson/KeeanoGeoJson-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -369,9 +375,13 @@
 				DEVELOPMENT_TEAM = 9GY7MHB882;
 				INFOPLIST_FILE = KeeanoGeoJson/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeeanoGeoJson/KeeanoGeoJson-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
