@@ -12,6 +12,13 @@ import UIKit
 typealias AnyDictionary = [String : Any]
 
 extension UIColor {
+    
+    /**
+     This function returns UIColor for a Hex value.
+     
+     - parameter hex : Hex value of Color
+     */
+    
     class func colorFromHEXString(_ hex:String) -> UIColor {
         
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     var defaultMapZoom : Float = 12.0
     var initialLocation = CLLocationCoordinate2D(latitude: 39.0742, longitude: 21.8243)
-    var lastZoom : Float = 0.0
+    var lastZoomLevel : Float = 0.0
     
     // MARK: - View Functions
     
@@ -29,15 +29,19 @@ class ViewController: UIViewController {
         
         self.loadMapView()
         self.createReloadButton()
-        self.loadGeoJson()
+        self.prepareGeoJson()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loadBoundingBox()
+        self.adjustMapBoundingBox()
     }
     
     // MARK: - Initial Map Functions
+    
+    /**
+     This function load the mapview to initial location (Greece) with default zoom level 12.0.
+     */
     
     func loadMapView() -> Void {
         let camera = GMSCameraPosition.camera(withTarget: self.initialLocation, zoom: self.defaultMapZoom)
@@ -48,6 +52,10 @@ class ViewController: UIViewController {
     
     
     // MARK: - Map Reload
+    
+    /**
+     This function create the reload button on mapview to reload the map to initial location and default zoom.
+     */
     
     func createReloadButton() -> Void {
         
@@ -65,12 +73,16 @@ class ViewController: UIViewController {
     }
     
     @objc func reloadAction(_ button : UIButton) -> Void {
-        self.loadBoundingBox()
+        self.adjustMapBoundingBox()
     }
     
     // MARK: - GeoJson
     
-    func loadGeoJson() -> Void {
+    /**
+     This function prepares the GeoJson data to GMFeatuers
+     */
+    
+    func prepareGeoJson() -> Void {
         
         guard let fileURL = Bundle.main.url(forResource: "data", withExtension: "geojson") else { return }
         
@@ -102,6 +114,13 @@ class ViewController: UIViewController {
     
     // MARK: - Features
     
+    /**
+     This function load map features as per the zoom level
+     
+     - parameter zoomLevel : Map's current zoom level
+     
+     */
+    
     func loadFeatures(forZoom zoomLevel : Float) -> Void {
         
         guard self.allFeatures.count > 0 else { return }
@@ -123,15 +142,18 @@ class ViewController: UIViewController {
         let filteredFeatures = self.allFeatures.filter { allowedTypes.contains($0.propertyType) }
         
         _ = filteredFeatures.map {
-            if let layers = $0.featureOverlays() {
-                _ = layers.map { $0.map = self.mapView }
-            }
+            guard let layers = $0.featureOverlays() else { return }
+            _ = layers.map { $0.map = self.mapView }
         }
     }
     
     // MARK: - Bounding Box
     
-    func loadBoundingBox() -> Void {
+    /**
+     This function force the map to the preferred region.
+     */
+    
+    func adjustMapBoundingBox() -> Void {
         
         guard let rootObject = self.jsonRootObject else { return }
         
@@ -165,10 +187,10 @@ extension ViewController : GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         
-        if self.lastZoom != mapView.camera.zoom {
+        if self.lastZoomLevel != mapView.camera.zoom {
             self.loadFeatures(forZoom: mapView.camera.zoom)
         }
-        self.lastZoom = mapView.camera.zoom
+        self.lastZoomLevel = mapView.camera.zoom
     }
 }
 

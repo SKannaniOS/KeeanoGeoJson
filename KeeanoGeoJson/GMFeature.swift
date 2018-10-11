@@ -69,15 +69,14 @@ class GMFeature: NSObject {
         self.properties = properties
     }
     
-    // MARK: - Class Function
-    
-    class func isMarker<T : GMSOverlay>(_ overlay : T) -> Bool {
-        return overlay is GMSMarker ? true : false
-    }
-    
-    
     // MARK: - Overlay Creator
     
+    /**
+     This function creates and returns array of marker/polygons as per the feature.
+     
+     - Returns: Array of Overlay, either Polygon or Marker
+     
+     */
     func featureOverlays<T : GMSOverlay> () -> [T]? {
         
         guard let coordinates = geometry["coordinates"] else { return nil }
