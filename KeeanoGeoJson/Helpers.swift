@@ -3,7 +3,7 @@
 //  KeeanoGeoJson
 //
 //  Created by SaTHEEsH KaNNaN on 10/10/18.
-//  Copyright © 2018 Innoppl. All rights reserved.
+//  Copyright © 2018 SKannaniOS. All rights reserved.
 //
 
 import Foundation

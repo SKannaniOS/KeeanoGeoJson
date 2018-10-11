@@ -124,7 +124,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = Innoppl;
+				ORGANIZATIONNAME = SKannaniOS;
 				TargetAttributes = {
 					8B8FED1B216DCC8300216C5A = {
 						CreatedOnToolsVersion = 10.0;
@@ -364,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SKannaniOS.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
@@ -385,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.innoppl.KeeanoGeoJson;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SKannaniOS.KeeanoGeoJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
