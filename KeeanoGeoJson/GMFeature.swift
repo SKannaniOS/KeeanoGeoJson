@@ -56,9 +56,9 @@ class GMFeature: NSObject {
     
     // MARK: - Initializers
     init(properties : AnyDictionary, geometry : AnyDictionary) {
-        self.properties = properties
         super.init()
         self.setGeometry(geometry)
+        self.setProperties(properties)
     }
     
     private func setGeometry(_ geometry : AnyDictionary) -> Void {

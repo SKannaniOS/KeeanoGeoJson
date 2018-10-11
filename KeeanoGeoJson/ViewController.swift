@@ -16,10 +16,11 @@ class ViewController: UIViewController {
     // MARK: - Properties    
     var mapView : GMSMapView!
     var jsonRootObject : AnyDictionary?
-    var allFeatures : [AnyDictionary]?
+    var allFeatures = [GMFeature]()
     
     var defaultMapZoom : Float = 12.0
     var initialLocation = CLLocationCoordinate2D(latitude: 39.0742, longitude: 21.8243)
+    var lastZoom : Float = 0.0
     
     // MARK: - View Functions
     
@@ -34,7 +35,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.loadBoundingBox()
-        self.loadFeatures()
     }
     
     // MARK: - Initial Map Functions
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     func loadMapView() -> Void {
         let camera = GMSCameraPosition.camera(withTarget: self.initialLocation, zoom: self.defaultMapZoom)
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        self.mapView.delegate = self
         self.view = self.mapView
     }
     
@@ -65,7 +66,6 @@ class ViewController: UIViewController {
     
     @objc func reloadAction(_ button : UIButton) -> Void {
         self.loadBoundingBox()
-        self.loadFeatures()
     }
     
     // MARK: - GeoJson
@@ -83,29 +83,48 @@ class ViewController: UIViewController {
             self.jsonRootObject = rootObject
             
            
-            guard let allFeatures = rootObject["features"] as? [AnyDictionary] else { return }
-                        
-            self.allFeatures = allFeatures
+            guard let allRawFeatures = rootObject["features"] as? [AnyDictionary] else { return }
             
+            self.allFeatures.removeAll()
+            
+            for rawFeature in allRawFeatures {
+                
+                if let properties = rawFeature["properties"] as? AnyDictionary, let geometry = rawFeature["geometry"] as? [String : Any] {
+                    
+                    let feature = GMFeature(properties: properties, geometry: geometry)
+                    
+                    self.allFeatures.append(feature)
+                }
+            }
         }
         catch { print(error.localizedDescription) }
     }
     
     // MARK: - Features
     
-    func loadFeatures() -> Void {
+    func loadFeatures(forZoom zoomLevel : Float) -> Void {
         
-        guard let allFeatures = self.allFeatures else { return }
+        guard self.allFeatures.count > 0 else { return }
         
-        for feature in allFeatures {
-            
-            if let properties = feature["properties"] as? AnyDictionary, let geometry = feature["geometry"] as? [String : Any] {
-                
-                let feature = GMFeature(properties: properties, geometry: geometry)
-                
-                if let layers = feature.featureOverlays() {
-                    _ = layers.map { $0.map = self.mapView }
-                }
+        self.mapView.clear()
+        
+        guard zoomLevel > 9.0 else { return }
+        
+        var allowedTypes : [PropertyType] = PropertyType.allCases
+        
+        if zoomLevel >= 9.0, zoomLevel <= 12.0 {
+            allowedTypes = [.Port, .Marina]
+        }
+        
+        if zoomLevel > 12.0, zoomLevel <= 17.0 {
+            allowedTypes = [.Port, .Marina, .Beach]
+        }
+        
+        let filteredFeatures = self.allFeatures.filter { allowedTypes.contains($0.propertyType) }
+        
+        _ = filteredFeatures.map {
+            if let layers = $0.featureOverlays() {
+                _ = layers.map { $0.map = self.mapView }
             }
         }
     }
@@ -140,6 +159,16 @@ class ViewController: UIViewController {
 
 }
 
+// MARK: - GMSMapViewDelegate
 
-
+extension ViewController : GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        
+        if self.lastZoom != mapView.camera.zoom {
+            self.loadFeatures(forZoom: mapView.camera.zoom)
+        }
+        self.lastZoom = mapView.camera.zoom
+    }
+}
 
