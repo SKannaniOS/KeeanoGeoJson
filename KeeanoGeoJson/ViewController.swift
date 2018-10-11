@@ -18,24 +18,54 @@ class ViewController: UIViewController {
     var jsonRootObject : AnyDictionary?
     var allFeatures : [AnyDictionary]?
     
+    var defaultMapZoom : Float = 12.0
+    var initialLocation = CLLocationCoordinate2D(latitude: 39.0742, longitude: 21.8243)
+    
     // MARK: - View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.loadMapView()
+        self.createReloadButton()
+        self.loadGeoJson()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loadGeoJson()
+        self.loadBoundingBox()
+        self.loadFeatures()
     }
     
     // MARK: - Initial Map Functions
     
     func loadMapView() -> Void {
-        let camera = GMSCameraPosition.camera(withLatitude: 39.0742, longitude: 21.8243, zoom: 12.0)
+        let camera = GMSCameraPosition.camera(withTarget: self.initialLocation, zoom: self.defaultMapZoom)
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = self.mapView
+    }
+    
+    
+    // MARK: - Map Reload
+    
+    func createReloadButton() -> Void {
+        
+        let screenSize = UIScreen.main.bounds.size
+        let buttonSize = CGSize(width: 44.0, height: 44.0)
+        let gap : CGFloat = 10.0
+        
+        let button = UIButton(type: .custom)
+        
+        button.frame = CGRect(x: screenSize.width - buttonSize.width - gap, y: screenSize.height - buttonSize.height - gap, width: buttonSize.width, height: buttonSize.height)
+        button.setImage(UIImage(named: "Reload_Icon"), for: .normal)
+        button.addTarget(self, action: #selector(reloadAction(_:)), for: .touchUpInside)
+        
+        self.mapView.addSubview(button)
+    }
+    
+    @objc func reloadAction(_ button : UIButton) -> Void {
+        self.loadBoundingBox()
+        self.loadFeatures()
     }
     
     // MARK: - GeoJson
@@ -52,24 +82,32 @@ class ViewController: UIViewController {
             
             self.jsonRootObject = rootObject
             
-            self.loadBoundingBox()
-            
+           
             guard let allFeatures = rootObject["features"] as? [AnyDictionary] else { return }
                         
-            for feature in allFeatures {
-                
-                if let properties = feature["properties"] as? AnyDictionary, let geometry = feature["geometry"] as? [String : Any] {
-                    
-                    let feature = GMFeature(properties: properties, geometry: geometry)
-                    
-                    if let layers = feature.featureOverlays() {
-                        _ = layers.map { $0.map = self.mapView }
-                    }
-                }
-            }
+            self.allFeatures = allFeatures
             
         }
         catch { print(error.localizedDescription) }
+    }
+    
+    // MARK: - Features
+    
+    func loadFeatures() -> Void {
+        
+        guard let allFeatures = self.allFeatures else { return }
+        
+        for feature in allFeatures {
+            
+            if let properties = feature["properties"] as? AnyDictionary, let geometry = feature["geometry"] as? [String : Any] {
+                
+                let feature = GMFeature(properties: properties, geometry: geometry)
+                
+                if let layers = feature.featureOverlays() {
+                    _ = layers.map { $0.map = self.mapView }
+                }
+            }
+        }
     }
     
     // MARK: - Bounding Box
@@ -94,7 +132,7 @@ class ViewController: UIViewController {
         center.longitude = fmax(lng1, lng2) - (span.longitudeDelta / 2.0)
         
         let place = CLLocationCoordinate2D(latitude: center.latitude, longitude: center.longitude)
-        let placeCam = GMSCameraUpdate.setTarget(place)
+        let placeCam = GMSCameraUpdate.setTarget(place, zoom: self.defaultMapZoom)
         
         self.mapView.animate(with: placeCam)
         
