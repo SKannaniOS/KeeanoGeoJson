@@ -80,7 +80,7 @@ class GMFeature: NSObject {
     
     func featureOverlays<T : GMSOverlay> () -> [T]? {
         
-        guard let gType = geometry["type"] as? String, let coordinates = geometry["coordinates"] else { return nil }
+        guard let coordinates = geometry["coordinates"] else { return nil }
         
         if self.featureType == .Point {
             
@@ -89,8 +89,14 @@ class GMFeature: NSObject {
             let point = CLLocationCoordinate2D(latitude: pointValues.last!, longitude: pointValues.first!)
             
             let marker = GMSMarker(position: point)
-            marker.title = gType
-            marker.icon = GMSMarker.markerImage(with: .orange)
+            
+            marker.title = self.properties["name"] as? String
+            marker.snippet = self.properties["type"] as? String
+            
+            if let colorCode = self.properties["marker-color"] as? String {
+                marker.icon = GMSMarker.markerImage(with: UIColor.colorFromHEXString(colorCode))
+            }
+            
             
             return [marker] as? [T]
         }
@@ -119,9 +125,18 @@ class GMFeature: NSObject {
                 let polygon = GMSPolygon()
                 
                 polygon.path = path
-                polygon.fillColor = .green
-                polygon.strokeColor = .red
-                polygon.strokeWidth = 1.0
+                
+                if let colorCode = self.properties["fill"] as? String {
+                    let opacity = (self.properties["fill-opacity"] as? CGFloat) ?? 1.0
+                    polygon.fillColor = UIColor.colorFromHEXString(colorCode).withAlphaComponent(opacity)
+                }
+                if let colorCode = self.properties["stroke"] as? String {
+                    let opacity = (self.properties["stroke-opacity"] as? CGFloat) ?? 1.0
+                    polygon.strokeColor = UIColor.colorFromHEXString(colorCode).withAlphaComponent(opacity)
+                }
+                
+                polygon.strokeWidth = (self.properties["stroke-width"] as? CGFloat) ?? 1.0
+
                 polygon.title = "gType"
                 polygon.isTappable = true
                 

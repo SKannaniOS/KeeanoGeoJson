@@ -21,7 +21,7 @@ extension UIColor {
         }
         
         if cString.count != 6 {
-            return UIColor.gray
+            return UIColor.clear
         }
         
         var rgbValue:UInt32 = 0
