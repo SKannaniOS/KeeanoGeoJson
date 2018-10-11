@@ -11,6 +11,21 @@ import UIKit
 
 typealias AnyDictionary = [String : Any]
 
+
+// MARK: - Constants
+
+/**
+ This struct is used to keep the constants.
+ */
+struct Constants {
+    static let googleAPIKey = "AIzaSyBZtZJkhCOYeVGC8gin7kDQIZfir4J0OUg"
+    static let geoJsonURL = "https://keeano.com/dev/data.geojson"
+    
+    private init(){}
+}
+
+// MARK: - Extensions
+
 extension UIColor {
     
     /**

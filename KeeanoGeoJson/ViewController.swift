@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     var initialLocation = CLLocationCoordinate2D(latitude: 39.0742, longitude: 21.8243)
     var lastZoomLevel : Float = 0.0
     
-    let fileURLString = "https://keeano.com/dev/data.geojson"
-    
     // MARK: - View Functions
     
     override func viewDidLoad() {
@@ -108,7 +106,7 @@ class ViewController: UIViewController {
     
     func prepareGeoJson() -> Void {
         
-        guard let fileURL = URL(string: self.fileURLString) else { return }
+        guard let fileURL = URL(string: Constants.geoJsonURL) else { return }
         
         do {
             
