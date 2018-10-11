@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var initialLocation = CLLocationCoordinate2D(latitude: 39.0742, longitude: 21.8243)
     var lastZoomLevel : Float = 0.0
     
+    let fileURLString = "https://keeano.com/dev/data.geojson"
+    
     // MARK: - View Functions
     
     override func viewDidLoad() {
@@ -35,6 +37,23 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.adjustMapBoundingBox()
+    }
+    
+    func showAlert(_ message : String) -> Void {
+        
+        let alert = UIAlertController(title: "KeeanoGeo", message: message, preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let retry = UIAlertAction(title: "Retry", style: .default) { (action) in
+            self.prepareGeoJson()
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(retry)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Initial Map Functions
@@ -73,7 +92,12 @@ class ViewController: UIViewController {
     }
     
     @objc func reloadAction(_ button : UIButton) -> Void {
-        self.adjustMapBoundingBox()
+        if self.jsonRootObject == nil {
+            self.prepareGeoJson()
+        }
+        else {
+            self.adjustMapBoundingBox()
+        }
     }
     
     // MARK: - GeoJson
@@ -84,7 +108,7 @@ class ViewController: UIViewController {
     
     func prepareGeoJson() -> Void {
         
-        guard let fileURL = Bundle.main.url(forResource: "data", withExtension: "geojson") else { return }
+        guard let fileURL = URL(string: self.fileURLString) else { return }
         
         do {
             
@@ -109,7 +133,9 @@ class ViewController: UIViewController {
                 }
             }
         }
-        catch { print(error.localizedDescription) }
+        catch {
+            self.showAlert(error.localizedDescription)
+        }
     }
     
     // MARK: - Features
