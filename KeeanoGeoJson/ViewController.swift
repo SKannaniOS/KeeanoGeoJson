@@ -13,19 +13,23 @@ import MapKit
 // MARK: - ViewController
 class ViewController: UIViewController {
 
-    // MARK: - Properties
-    var mapView: GMSMapView!
+    // MARK: - Properties    
+    var mapView : GMSMapView!
+    var jsonRootObject : AnyDictionary?
     var allFeatures : [AnyDictionary]?
     
     // MARK: - View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.loadMapView()
-        self.loadGeoJson()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadGeoJson()
+    }
+    
     // MARK: - Initial Map Functions
     
     func loadMapView() -> Void {
@@ -33,29 +37,6 @@ class ViewController: UIViewController {
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = self.mapView
     }
-    
-    // MARK: - Bounding Box
-    
-    func loadBoundingBox(_ boxCoordinates : [Double]) -> Void {
-        
-        let lng1 = boxCoordinates[0]
-        let lat1 = boxCoordinates[1]
-        let lng2 = boxCoordinates[2]
-        let lat2 = boxCoordinates[3]
-        
-        var span = MKCoordinateSpan()
-        span.latitudeDelta = fabs(lat2 - lat1)
-        span.longitudeDelta = fabs(lng2 - lng1)
-        
-        var center = CLLocationCoordinate2D()
-        center.latitude = fmax(lat1, lat2) - (span.latitudeDelta / 2.0)
-        center.longitude = fmax(lng1, lng2) - (span.longitudeDelta / 2.0)
-        
-        let place = CLLocationCoordinate2D(latitude: center.latitude, longitude: center.longitude)
-        let placeCam = GMSCameraUpdate.setTarget(place)
-        self.mapView.animate(with: placeCam)
-    }
-    
     
     // MARK: - GeoJson
     
@@ -69,10 +50,9 @@ class ViewController: UIViewController {
             
             guard let rootObject = try JSONSerialization.jsonObject(with: fileData, options: JSONSerialization.ReadingOptions.allowFragments) as? AnyDictionary else { return }
             
+            self.jsonRootObject = rootObject
             
-            if let bbox = rootObject["bbox"] as? [Double] {
-                self.loadBoundingBox(bbox)
-            }
+            self.loadBoundingBox()
             
             guard let allFeatures = rootObject["features"] as? [AnyDictionary] else { return }
                         
@@ -91,6 +71,35 @@ class ViewController: UIViewController {
         }
         catch { print(error.localizedDescription) }
     }
+    
+    // MARK: - Bounding Box
+    
+    func loadBoundingBox() -> Void {
+        
+        guard let rootObject = self.jsonRootObject else { return }
+        
+        guard let boxCoordinates = rootObject["bbox"] as? [Double] else { return }
+        
+        let lng1 = boxCoordinates[0]
+        let lat1 = boxCoordinates[1]
+        let lng2 = boxCoordinates[2]
+        let lat2 = boxCoordinates[3]
+        
+        var span = MKCoordinateSpan()
+        span.latitudeDelta = fabs(lat2 - lat1)
+        span.longitudeDelta = fabs(lng2 - lng1)
+        
+        var center = CLLocationCoordinate2D()
+        center.latitude = fmax(lat1, lat2) - (span.latitudeDelta / 2.0)
+        center.longitude = fmax(lng1, lng2) - (span.longitudeDelta / 2.0)
+        
+        let place = CLLocationCoordinate2D(latitude: center.latitude, longitude: center.longitude)
+        let placeCam = GMSCameraUpdate.setTarget(place)
+        
+        self.mapView.animate(with: placeCam)
+        
+    }
+
 }
 
 
